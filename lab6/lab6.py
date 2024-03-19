@@ -25,14 +25,15 @@ class Lab6Host:
         self.trackers = [
                          Tracker(cv2.TrackerKCF_create, "KCF", (0, 0, 255)),
                          Tracker(cv2.TrackerCSRT_create, "CSRT", (255, 0, 0)),
+                         Tracker(cv2.TrackerMIL_create, "MIL", (255, 255, 0)),
                          ]
-        self.use_tracker_ui = [True, True]
-        self.use_tracker = [False, False]
-        self.exec_time = [0, 0]
+        self.use_tracker_ui = [True, True, True]
+        self.use_tracker = [False, False, False]
+        self.exec_time = [0, 0, 0]
         self.show_bbox = True
         self.pause = True
 
-        self.display_tracker = [True, True]
+        self.display_tracker = [True, True, True]
 
         success,image = vidcap.read()
         while success:
