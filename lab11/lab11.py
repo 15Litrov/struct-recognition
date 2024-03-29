@@ -52,13 +52,13 @@ class Lab11Host:
             if imgui.button("Score"):
                 if self.dict is None:
                     self.score_text_text = "Please, load the dictionary"
-
-                score = int(self.score_text(self.text_to_score, self.dict, self.append_endl))
-                self.score_text_text = f"Plausibility: {score}. "
-                if score > self.threshold:
-                    self.score_text_text += f"Realistic ({score} > {self.threshold})"
                 else:
-                    self.score_text_text += f"Fake ({score} <= {self.threshold})"
+                    score = int(self.score_text(self.text_to_score, self.dict, self.append_endl))
+                    self.score_text_text = f"Plausibility: {score}. "
+                    if score > self.threshold:
+                        self.score_text_text += f"Realistic ({score} > {self.threshold})"
+                    else:
+                        self.score_text_text += f"Fake ({score} <= {self.threshold})"
 
             imgui.separator()
             imgui.text_ansi(self.score_text_text)
